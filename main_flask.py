@@ -1,3 +1,4 @@
+
 import pandas as pd 
 from scipy.spatial.distance import cdist
 from flask import Flask
@@ -34,8 +35,8 @@ df_find_coord['station'] = [match_value(df_metro, 'point', x, 'Station Name') fo
 #print(df_find_coord['station'].values[0])
 
 @app.route('/')
-def coords():
+def index():
     return df_find_coord['station'].values[0]
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='127.0.0.1')
